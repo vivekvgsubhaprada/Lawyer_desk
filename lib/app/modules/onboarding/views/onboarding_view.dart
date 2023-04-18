@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lawyer_desk/app/modules/language_selection/views/language_selection_view.dart';
-import 'package:lawyer_desk/app/ustils/colors.dart';
-import 'package:lawyer_desk/app/ustils/sizes.dart';
+import 'package:lawyer_desk/app/modules/mobile_number_input/bindings/mobile_number_input_binding.dart';
+import 'package:lawyer_desk/app/modules/mobile_number_input/views/mobile_number_input_view.dart';
+import 'package:lawyer_desk/app/routes/app_pages.dart';
+import 'package:lawyer_desk/app/utils/colors.dart';
+import 'package:lawyer_desk/app/utils/sizes.dart';
 import '../controllers/onboarding_controller.dart';
 
 class OnboardingView extends GetView<OnboardingController> {
@@ -63,8 +65,10 @@ class OnboardingView extends GetView<OnboardingController> {
             Obx(
               () => ElevatedButton(
                 onPressed: () {
-                  print(controller.userType);
-                  // Get.to(const LanguageSelectionView());
+                  Get.to(
+                    () => const MobileNumberInputView(),
+                    binding: MobileNumberInputBinding(),
+                  );
                 },
                 style: ElevatedButton.styleFrom(elevation: 0.0),
                 child: Text('Join as ${controller.userType}'),

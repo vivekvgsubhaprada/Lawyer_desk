@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>710784955224-bb692c5c52nfgn0e503q9kq38th2l0t3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.710784955224-bb692c5c52nfgn0e503q9kq38th2l0t3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBMm4rifAKoqtDShlmQpvChBQo19antjeY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>710784955224</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>lawyerdesk.ai.lawyerDesk</string>
+	<key>PROJECT_ID</key>
+	<string>lawyerdesk</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lawyerdesk.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:710784955224:ios:684764a911a751148bab2d</string>
+</dict>
+</plist>

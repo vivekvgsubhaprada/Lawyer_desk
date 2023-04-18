@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "710784955224",
+    "project_id": "lawyerdesk",
+    "storage_bucket": "lawyerdesk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710784955224:android:a6a26d44f677798b8bab2d",
+        "android_client_info": {
+          "package_name": "lawyerdesk.ai.lawyer_desk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710784955224-9jm8alkpca4p22fpf9fcq743r9fn8v1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRH8-JowRdFKl-v5rWSmZXg6PyAsuvGJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710784955224-9jm8alkpca4p22fpf9fcq743r9fn8v1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
