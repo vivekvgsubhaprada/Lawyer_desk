@@ -14,6 +14,7 @@ Future<void> main() async {
       title: "Lawyer Desk",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.amber,
         primaryColor: Colors.amber,
