@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class LanguageSelectionController extends GetxController {
-  //TODO: Implement LanguageSelectionController
+class OtpInputController extends GetxController {
+  //TODO: Implement OtpInputController
 
   final count = 0.obs;
   @override

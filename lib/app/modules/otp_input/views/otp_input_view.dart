@@ -6,10 +6,10 @@ import 'package:lawyer_desk/app/custom_widgets/initail_container.dart';
 import 'package:lawyer_desk/app/routes/app_pages.dart';
 import 'package:lawyer_desk/app/utils/colors.dart';
 import 'package:lawyer_desk/app/utils/sizes.dart';
-import '../controllers/mobile_number_input_controller.dart';
+import '../controllers/otp_input_controller.dart';
 
-class MobileNumberInputView extends GetView<MobileNumberInputController> {
-  const MobileNumberInputView({Key? key}) : super(key: key);
+class OtpInputView extends GetView<OtpInputController> {
+  const OtpInputView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +31,7 @@ class MobileNumberInputView extends GetView<MobileNumberInputController> {
                     children: [
                       sizedHeight(Get.height * 0.04),
                       const Text(
-                        'Enter your mobile number',
+                        'Enter OTP',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -39,7 +39,7 @@ class MobileNumberInputView extends GetView<MobileNumberInputController> {
                       ),
                       sizedHeight(Get.height * 0.005),
                       Text(
-                        'You will receive a 6 digit code\n to verify next.',
+                        'A four digit otp has send to\n +91 8921912219',
                         style: TextStyle(
                           color: AppColors.kGreyColor,
                           fontSize: 16,
@@ -53,9 +53,9 @@ class MobileNumberInputView extends GetView<MobileNumberInputController> {
                         height: Get.height * 0.055,
                         child: CustomButton(
                           onpressed: () {
-                            Get.toNamed(Routes.OTP_INPUT);
+                            Get.toNamed(Routes.PROFILE_DETAILS_INPUT);
                           },
-                          text: 'Send Otp',
+                          text: 'Verify OTP',
                         ),
                       ),
                     ],

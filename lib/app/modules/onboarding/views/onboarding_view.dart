@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lawyer_desk/app/custom_widgets/custion_textfeild.dart';
 import 'package:lawyer_desk/app/custom_widgets/custom_button.dart';
-import 'package:lawyer_desk/app/modules/mobile_number_input/bindings/mobile_number_input_binding.dart';
-import 'package:lawyer_desk/app/modules/mobile_number_input/views/mobile_number_input_view.dart';
+import 'package:lawyer_desk/app/custom_widgets/initail_container.dart';
 import 'package:lawyer_desk/app/routes/app_pages.dart';
 import 'package:lawyer_desk/app/utils/colors.dart';
 import 'package:lawyer_desk/app/utils/sizes.dart';
@@ -14,75 +12,75 @@ class OnboardingView extends GetView<OnboardingController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: AppColors.klightBlue,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset('assets/lawyer_desk_logo.png'),
-              sizedHeight(Get.height * 0.03),
-              Obx(
-                () => Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ChoiceChip(
-                      label: const Text('Client'),
-                      selected:
-                          controller.userType.value == 'Client' ? true : false,
-                      selectedColor: AppColors.kBlackColor,
-                      labelStyle: TextStyle(
-                        color: controller.userType.value == 'Client'
-                            ? AppColors.kWhiteColor
-                            : AppColors.kBlackColor,
-                      ),
-                      onSelected: (value) {
-                        controller.userType.value = 'Client';
-                      },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            sizedHeight(Get.height * 0.09),
+            Image.asset('assets/lawyer_desk_logo.png'),
+              sizedHeight(Get.height * 0.09),
+            InitialContainer(
+              child: Column(
+                children: [
+                  sizedHeight(Get.height * 0.05),
+                  const Text(
+                    'JOIN AS PUBLIC OR LAWYER',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                     ),
-                    sizedWidth(Get.height * 0.02),
-                    ChoiceChip(
-                      label: const Text('Lawyer'),
-                      selected:
-                          controller.userType.value == 'Lawyer' ? true : false,
-                      onSelected: (value) {
-                        controller.userType.value = 'Lawyer';
+                  ),
+                  sizedHeight(Get.height * 0.04),
+                  Obx(
+                    () => ToggleButtons(
+                      direction: Axis.horizontal,
+                      onPressed: (int index) {
+                        print(index);
+                        for (int i = 0;
+                            i < controller.selectedUserType.length;
+                            i++) {
+                          controller.selectedUserType[i] = i == index;
+                        }
                       },
-                      selectedColor: AppColors.kBlackColor,
-                      labelStyle: TextStyle(
-                        color: controller.userType.value == "Lawyer"
-                            ? AppColors.kWhiteColor
-                            : AppColors.kBlackColor,
+                      borderRadius: const BorderRadius.all(Radius.circular(30)),
+                      selectedColor: Colors.white,
+                      fillColor: AppColors.kYellowColor,
+                      color: AppColors.kBlackColor,
+                      constraints: const BoxConstraints(
+                        minHeight: 40.0,
+                        minWidth: 80.0,
                       ),
+                      isSelected: controller.selectedUserType,
+                      children: const [
+                        Text(
+                          'Public',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Lawyer',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                  sizedHeight(Get.height * 0.03),
+                  SizedBox(
+                    width: Get.width * 0.85,
+                    height: Get.width * 0.12,
+                    child: CustomButton(
+                      onpressed: () {
+                        Get.toNamed(Routes.MOBILE_NUMBER_INPUT);
+                      },
+                      text: 'JOIN AS PUBLIC',
+                    ),
+                  ),
+                ],
               ),
-              sizedHeight(Get.height * 0.02),
-              // Obx(
-              //   () => ElevatedButton(
-              //     onPressed: () {
-              //       Get.to(
-              //         () => const MobileNumberInputView(),
-              //         binding: MobileNumberInputBinding(),
-              //       );
-              //     },
-              //     style: ElevatedButton.styleFrom(elevation: 0.0),
-              //     child: Text('Join as ${controller.userType}'),
-              //   ),
-              // ),
-              SizedBox(
-                width: Get.width * 0.85,
-                height: Get.height * 0.06,
-                child: CustomButton(
-                  onpressed: () {},
-                  text: 'Join',
-                ),
-              ),
-              CustomTextFeild(text: 'Enter your name')
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
