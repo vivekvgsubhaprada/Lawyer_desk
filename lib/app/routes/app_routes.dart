@@ -11,6 +11,7 @@ abstract class Routes {
   static const MOBILE_NUMBER_INPUT = _Paths.MOBILE_NUMBER_INPUT;
   static const PROFILE_DETAILS_INPUT = _Paths.PROFILE_DETAILS_INPUT;
   static const OTP_INPUT = _Paths.OTP_INPUT;
+  static const NEW_PAGE = _Paths.NEW_PAGE;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const MOBILE_NUMBER_INPUT = '/mobile-number-input';
   static const PROFILE_DETAILS_INPUT = '/profile-details-input';
   static const OTP_INPUT = '/otp-input';
+  static const NEW_PAGE = '/new-page';
 }

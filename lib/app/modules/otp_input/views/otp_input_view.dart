@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:lawyer_desk/app/custom_widgets/custion_textfeild.dart';
 import 'package:lawyer_desk/app/custom_widgets/custom_button.dart';
 import 'package:lawyer_desk/app/custom_widgets/initail_container.dart';
 import 'package:lawyer_desk/app/routes/app_pages.dart';
 import 'package:lawyer_desk/app/utils/colors.dart';
+import 'package:lawyer_desk/app/utils/reusable_values/box_shadows.dart';
 import 'package:lawyer_desk/app/utils/sizes.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import '../controllers/otp_input_controller.dart';
 
 class OtpInputView extends GetView<OtpInputController> {
@@ -46,7 +49,33 @@ class OtpInputView extends GetView<OtpInputController> {
                         ),
                       ),
                       sizedHeight(Get.height * 0.03),
-                      CustomTextFeild(text: 'Enter your phone number'),
+                      PinCodeTextField(
+                        boxShadows: [cardShadow],
+                        inputFormatters: [
+                          FilteringTextInputFormatter.digitsOnly,
+                        ],
+                        showCursor: false,
+                        keyboardType: TextInputType.number,
+                        appContext: context,
+                        length: 6,
+                        onChanged: (val) {
+                          print(val);
+                        },
+                        enableActiveFill: true,
+                        pinTheme: PinTheme(
+                          shape: PinCodeFieldShape.box,
+                          fieldHeight: 56,
+                          fieldWidth: 50,
+                          inactiveColor: AppColors.klightBlue,
+                          inactiveFillColor: AppColors.klightBlue,
+                          activeFillColor: AppColors.klightBlue,
+                          activeColor: AppColors.klightBlue,
+                          selectedFillColor: AppColors.klightBlue,
+                          selectedColor: AppColors.klightBlue,
+                          borderWidth: 1,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
                       sizedHeight(Get.height * 0.03),
                       SizedBox(
                         width: double.infinity,

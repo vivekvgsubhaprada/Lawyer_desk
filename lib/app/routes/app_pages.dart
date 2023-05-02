@@ -11,13 +11,14 @@ import '../modules/profile_details_input/bindings/profile_details_input_binding.
 import '../modules/profile_details_input/views/profile_details_input_view.dart';
 import '../modules/splash_screen/bindings/splash_screen_binding.dart';
 import '../modules/splash_screen/views/splash_screen_view.dart';
+
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
   // ignore: constant_identifier_names
-  static const INITIAL = Routes.SPLASH_SCREEN;
+  static const INITIAL = Routes.MOBILE_NUMBER_INPUT;
 
   static final routes = [
     GetPage(
@@ -37,7 +38,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MOBILE_NUMBER_INPUT,
-      page: () => const MobileNumberInputView(),
+      page: () => MobileNumberInputView(),
       binding: MobileNumberInputBinding(),
     ),
     GetPage(

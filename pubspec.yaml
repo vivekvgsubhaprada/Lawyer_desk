@@ -3,17 +3,19 @@ version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: ">=2.19.2 <3.0.0"
 
 dependencies:
   cloud_firestore: ^4.5.0
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.4.1
   firebase_core: ^2.9.0
+  fl_country_code_picker: ^0.1.2
   flutter:
     sdk: flutter
   get: 4.6.5
   image_picker: ^0.8.7+4
+  pin_code_fields: ^7.4.0
 
 dev_dependencies:
   flutter_lints: 2.0.1

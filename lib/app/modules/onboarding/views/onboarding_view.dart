@@ -21,7 +21,7 @@ class OnboardingView extends GetView<OnboardingController> {
           children: [
             sizedHeight(Get.height * 0.09),
             Image.asset('assets/lawyer_desk_logo.png'),
-              sizedHeight(Get.height * 0.09),
+            sizedHeight(Get.height * 0.09),
             InitialContainer(
               child: Column(
                 children: [
@@ -38,15 +38,22 @@ class OnboardingView extends GetView<OnboardingController> {
                     () => ToggleButtons(
                       direction: Axis.horizontal,
                       onPressed: (int index) {
-                        print(index);
+                        if (index == 0) {
+                          print('Public');
+                        } else {
+                          print("lawyer");
+                        }
+
                         for (int i = 0;
                             i < controller.selectedUserType.length;
                             i++) {
                           controller.selectedUserType[i] = i == index;
                         }
                       },
-                      borderRadius: const BorderRadius.all(Radius.circular(30)),
-                      selectedColor: Colors.white,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(30),
+                      ),
+                      selectedColor: AppColors.kWhiteColor,
                       fillColor: AppColors.kYellowColor,
                       color: AppColors.kBlackColor,
                       constraints: const BoxConstraints(
