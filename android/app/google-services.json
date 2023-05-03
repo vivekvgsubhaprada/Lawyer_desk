@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "710784955224-9aijuu7hbs7l84bbvu82rb94jnpcvf0f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lawyerdesk.ai.lawyer_desk",
+            "certificate_hash": "1e7164c8c7c4527dfd2d65675506f0b6eccbf5ce"
+          }
+        },
+        {
           "client_id": "710784955224-9jm8alkpca4p22fpf9fcq743r9fn8v1f.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "710784955224-9jm8alkpca4p22fpf9fcq743r9fn8v1f.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "710784955224-bb692c5c52nfgn0e503q9kq38th2l0t3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "lawyerdesk.ai.lawyerDesk"
+              }
             }
           ]
         }
