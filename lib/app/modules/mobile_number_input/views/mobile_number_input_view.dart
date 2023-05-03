@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:lawyer_desk/app/custom_widgets/custom_button.dart';
 import 'package:lawyer_desk/app/custom_widgets/initail_container.dart';
 import 'package:lawyer_desk/app/custom_widgets/phone_number_feild.dart';
+import 'package:lawyer_desk/app/modules/otp_input/views/otp_input_view.dart';
 import 'package:lawyer_desk/app/utils/colors.dart';
 import 'package:lawyer_desk/app/utils/sizes.dart';
 import '../controllers/mobile_number_input_controller.dart';
@@ -52,18 +53,26 @@ class MobileNumberInputView extends GetView<MobileNumberInputController> {
                         sizedHeight(Get.height * 0.03),
                         Row(
                           children: [
-                            Container(
-                              height: Get.height * 0.06,
-                              width: Get.width * 0.17,
-                              decoration: BoxDecoration(
-                                color: AppColors.klightBlue,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: const Center(
-                                child: Text('+91'),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 17.5),
+                              child: Container(
+                                height: Get.height * 0.078,
+                                width: Get.width * 0.14,
+                                decoration: BoxDecoration(
+                                  color: AppColors.klightBlue,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    '+91',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                            sizedWidth(Get.width * 0.01),
+                            sizedWidth(Get.width * 0.02),
                             Expanded(
                               child: PhoneNumberTextFeild(
                                 textEditingController:
@@ -80,9 +89,7 @@ class MobileNumberInputView extends GetView<MobileNumberInputController> {
                           height: Get.height * 0.055,
                           child: CustomButton(
                             onpressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                controller.onSendOtpButtonClicked();
-                              }
+                              Get.to(const OtpInputView());
                             },
                             text: 'Send Otp',
                           ),
